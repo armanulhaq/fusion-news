@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 400px;
+    height: 50vh;
     padding-left: 10vw;
     padding-right: 10vw;
     padding-top: 20px;
@@ -12,21 +12,31 @@
 
 .slide {
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 7px #666;
-    width: 100%;
+    width: 60%;
     height: 100%;
+    position: absolute; /* Ensure absolute positioning for slide transitions */
+    transition: opacity 0.5s ease; /* Smooth transition for visibility */
+}
+
+.slide img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures image covers the entire slide area */
+    border-radius: 0.5rem; /* Match the slide's border radius */
+    filter: blur(5px);
 }
 
 .slide-hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .arrow {
     position: absolute;
-    filter: drop-shadow(0px 0px 5px #555);
     width: 2rem;
     height: 2rem;
     color: white;
+    z-index: 10; /* Ensure arrows are above slides */
 }
 
 .arrow:hover {
@@ -34,17 +44,18 @@
 }
 
 .arrow-left {
-    left: 1rem;
+    left: 22rem;
 }
 
 .arrow-right {
-    right: 1rem;
+    right: 22rem;
 }
 
 .indicators {
     display: flex;
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.5rem;
+    z-index: 10; /* Ensure indicators are above slides */
 }
 
 .indicator {
@@ -54,11 +65,26 @@
     border-radius: 100%;
     border: none;
     outline: none;
-    box-shadow: 0px 0px 5px #555;
     margin: 0 0.2rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .indicator-inactive {
     background-color: grey;
+}
+
+/* Optional: Title overlay if you want to add one */
+.slide-title {
+    position: absolute;
+    bottom: 40px;
+    color: white;
+    padding: 10px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    text-align: left;
 }

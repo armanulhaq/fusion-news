@@ -1,18 +1,25 @@
-import data from "../data/carouselData";
+import { useState } from "react";
 import { FaChevronCircleRight } from "react-icons/fa";
 import { FaChevronCircleLeft } from "react-icons/fa";
-import { useState } from "react";
 import "./carousel.css";
 
-export const Carousel = () => {
+export const Carousel = ({ articles }) => {
     const [slide, setSlide] = useState(0);
+    const [imageErrors, setImageErrors] = useState({});
 
     const nextSlide = () => {
-        setSlide(slide === data.length - 1 ? 0 : slide + 1);
+        setSlide(slide === articles.length - 1 ? 0 : slide + 1);
     };
 
     const prevSlide = () => {
-        setSlide(slide === 0 ? data.length - 1 : slide - 1);
+        setSlide(slide === 0 ? articles.length - 1 : slide - 1);
+    };
+
+    const handleImageError = (index) => {
+        setImageErrors((prev) => ({
+            ...prev,
+            [index]: true,
+        }));
     };
 
     return (
@@ -21,16 +28,29 @@ export const Carousel = () => {
                 onClick={prevSlide}
                 className="arrow arrow-left"
             />
-            {data.map((item, idx) => {
+            {articles.map((item, idx) => {
+                const imageUrl =
+                    !item.urlToImage || imageErrors[idx]
+                        ? "/breakingnews.png"
+                        : item.urlToImage;
+
                 return (
-                    <img
-                        src={item.src}
-                        alt={item.alt}
+                    <div
                         key={idx}
                         className={
                             slide === idx ? "slide" : "slide slide-hidden"
                         }
-                    />
+                    >
+                        <img
+                            src={imageUrl}
+                            alt={item.title || `News slide ${idx + 1}`}
+                            onError={() => handleImageError(idx)}
+                            className="news-image"
+                        />
+                        {item.title && (
+                            <div className="slide-title">{item.title}</div>
+                        )}
+                    </div>
                 );
             })}
             <FaChevronCircleRight
@@ -38,7 +58,7 @@ export const Carousel = () => {
                 className="arrow arrow-right"
             />
             <span className="indicators">
-                {data.map((_, idx) => {
+                {articles.map((_, idx) => {
                     return (
                         <button
                             key={idx}
