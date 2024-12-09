@@ -24,7 +24,7 @@
     width: 100%;
     object-fit: cover; /* Ensures image covers the entire slide area */
     border-radius: 0.5rem; /* Match the slide's border radius */
-    filter: brightness(30%);
+    filter: brightness(50%);
 }
 
 .slide-hidden {
@@ -34,8 +34,8 @@
 
 .arrow {
     position: absolute;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     color: white;
     z-index: 10; /* Ensure arrows are above slides */
 }
@@ -45,11 +45,11 @@
 }
 
 .arrow-left {
-    left: 22rem;
+    left: 23rem;
 }
 
 .arrow-right {
-    right: 22rem;
+    right: 23rem;
 }
 
 .indicators {

@@ -23,55 +23,62 @@ export const Carousel = ({ headlines }) => {
     };
 
     return (
-        <div className="carousel">
-            <FaChevronCircleLeft
-                onClick={prevSlide}
-                className="arrow arrow-left"
-            />
-            {headlines.map((item, idx) => {
-                const imageUrl =
-                    !item.urlToImage || imageErrors[idx]
-                        ? "/breakingnews.png"
-                        : item.urlToImage;
+        <div>
+            <h1 className="mx:5 px-5 text-3xl lg:px-[250px] font-bold  mt-5 text-white">
+                Top Stories
+            </h1>
 
-                return (
-                    <div
-                        key={idx}
-                        className={
-                            slide === idx ? "slide" : "slide slide-hidden"
-                        }
-                    >
-                        <img
-                            src={imageUrl}
-                            alt={item.title || `News slide ${idx + 1}`}
-                            onError={() => handleImageError(idx)}
-                            className="news-image"
-                        />
-                        {item.title && (
-                            <div className="slide-title">{item.title}</div>
-                        )}
-                    </div>
-                );
-            })}
-            <FaChevronCircleRight
-                onClick={nextSlide}
-                className="arrow arrow-right"
-            />
-            <span className="indicators">
-                {headlines.map((_, idx) => {
+            <div className="carousel">
+                <FaChevronCircleLeft
+                    onClick={prevSlide}
+                    className="arrow arrow-left"
+                />
+                {headlines.map((item, idx) => {
+                    const imageUrl =
+                        !item.urlToImage || imageErrors[idx]
+                            ? "/breakingnews.png"
+                            : item.urlToImage;
+
                     return (
-                        <button
+                        <div
                             key={idx}
                             className={
-                                slide === idx
-                                    ? "indicator"
-                                    : "indicator indicator-inactive"
+                                slide === idx ? "slide" : "slide slide-hidden"
                             }
-                            onClick={() => setSlide(idx)}
-                        ></button>
+                        >
+                            <img
+                                src={imageUrl}
+                                alt={item.title || `News slide ${idx + 1}`}
+                                onError={() => handleImageError(idx)}
+                                className="news-image"
+                            />
+                            {item.title && (
+                                <div className="slide-title">{item.title}</div>
+                            )}
+                        </div>
                     );
                 })}
-            </span>
+                <FaChevronCircleRight
+                    onClick={nextSlide}
+                    className="arrow arrow-right"
+                />
+                <span className="indicators">
+                    {headlines.map((_, idx) => {
+                        return (
+                            <button
+                                key={idx}
+                                className={
+                                    slide === idx
+                                        ? "indicator"
+                                        : "indicator indicator-inactive"
+                                }
+                                onClick={() => setSlide(idx)}
+                            ></button>
+                        );
+                    })}
+                </span>
+            </div>
+            <div></div>
         </div>
     );
 };

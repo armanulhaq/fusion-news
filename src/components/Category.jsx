@@ -1,32 +1,42 @@
+import { useState } from "react";
+
 const Category = ({ setSelectedCategory }) => {
+    const [activeCategory, setActiveCategory] = useState(null);
+
+    const handleCategoryClick = (category) => {
+        setSelectedCategory(category);
+        setActiveCategory(category);
+    };
+
+    const categories = [
+        { name: "Politics", key: "politics" },
+        { name: "Business", key: "business" },
+        { name: "Entertainment", key: "entertainment" },
+        { name: "Sports", key: "sports" },
+    ];
+
     return (
-        <div>
-            <h2 className="font-bold text-xl mx-5 lg:mx-10">Categories</h2>
-            <div className="flex gap-2 md:gap-3 lg:gap-5 mx-5 lg:mx-10 mt-3 text-sm lg:text-l">
-                <div
-                    onClick={() => setSelectedCategory("politics")}
-                    className="bg-gray-200 rounded-xl px-3 py-1 cursor-pointer"
-                >
-                    Politics
-                </div>
-                <div
-                    onClick={() => setSelectedCategory("business")}
-                    className="bg-gray-200 rounded-xl px-3 py-1 cursor-pointer"
-                >
-                    Business
-                </div>
-                <div
-                    onClick={() => setSelectedCategory("entertainment")}
-                    className="bg-gray-200 rounded-xl px-3 py-1 cursor-pointer"
-                >
-                    Entertainment
-                </div>
-                <div
-                    onClick={() => setSelectedCategory("sports")}
-                    className="bg-gray-200 rounded-xl px-3 py-1 cursor-pointer"
-                >
-                    Sports
-                </div>
+        <div className="mx-5 mt-10 lg:mx-0">
+            <h2 className="mx:5 lg:px-[250px] font-bold text-3xl text-white">
+                Categories
+            </h2>
+            <div className="mx:5 lg:px-[250px] flex gap-2 md:gap-3 lg:gap-5 mt-3 text-sm lg:text-l">
+                {categories.map((category) => (
+                    <div
+                        key={category.key}
+                        onClick={() => handleCategoryClick(category.key)}
+                        className={`
+              rounded-xl px-3 py-1 cursor-pointer
+              ${
+                  activeCategory === category.key
+                      ? "bg-[#4b02e8] text-white"
+                      : " text-white border border-[#4b02e8]"
+              }
+            `}
+                    >
+                        {category.name}
+                    </div>
+                ))}
             </div>
         </div>
     );
