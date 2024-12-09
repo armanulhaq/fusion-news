@@ -1,19 +1,17 @@
 .carousel {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 50vw;
     height: 50vh;
     padding-left: 10vw;
-    padding-right: 10vw;
     padding-top: 20px;
     margin-bottom: 20px;
 }
 
 .slide {
     border-radius: 0.5rem;
-    width: 60%;
+    width: 90%;
     height: 100%;
     position: absolute; /* Ensure absolute positioning for slide transitions */
     transition: opacity 0.5s ease; /* Smooth transition for visibility */
@@ -45,34 +43,11 @@
 }
 
 .arrow-left {
-    left: 23rem;
+    left: 12rem;
 }
 
 .arrow-right {
-    right: 23rem;
-}
-
-.indicators {
-    display: flex;
-    position: absolute;
-    bottom: 0.5rem;
-    z-index: 10; /* Ensure indicators are above slides */
-}
-
-.indicator {
-    background-color: white;
-    height: 0.5rem;
-    width: 0.5rem;
-    border-radius: 100%;
-    border: none;
-    outline: none;
-    margin: 0 0.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.indicator-inactive {
-    background-color: grey;
+    left: 56rem;
 }
 
 .slide-title {
@@ -91,6 +66,7 @@
 
 @media screen and (max-width: 767px) {
     .carousel {
+        width: 90vw;
         height: 35vh;
         padding-left: 5vw;
         padding-right: 5vw;
@@ -109,7 +85,7 @@
     }
 
     .arrow-right {
-        right: 1.5rem;
+        left: 20rem;
     }
     .indicator {
         height: 0.3rem;

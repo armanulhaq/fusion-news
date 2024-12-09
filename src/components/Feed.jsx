@@ -11,7 +11,7 @@ const Feed = ({ articles }) => {
         }));
     };
     return (
-        <div className=" px-5 lg:px-[250px] w-full gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className=" px-5 lg:px-[200px] w-full gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {articles.map((item, idx) => {
                 const imageUrl =
                     !item.urlToImage || imageErrors[idx]

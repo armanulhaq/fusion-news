@@ -17,10 +17,10 @@ const Category = ({ setSelectedCategory }) => {
 
     return (
         <div className="mx-5 mt-10 lg:mx-0">
-            <h2 className="mx:5 lg:px-[250px] font-bold text-3xl text-white">
+            <h2 className="mx:5 lg:px-[200px] font-bold text-2xl text-white">
                 Categories
             </h2>
-            <div className="mx:5 lg:px-[250px] flex gap-2 md:gap-3 lg:gap-5 mt-3 text-sm lg:text-l">
+            <div className="mx:5 lg:px-[200px] flex gap-2 md:gap-3 lg:gap-5 mt-3 text-sm lg:text-l">
                 {categories.map((category) => (
                     <div
                         key={category.key}
