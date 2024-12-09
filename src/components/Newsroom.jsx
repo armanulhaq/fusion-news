@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Carousel from "./Carousel";
 
-const Newsroom = () => {
-    const [articles, setArticles] = useState([]);
-
+const Newsroom = ({ selectedCategory, setArticles, articles }) => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
                 const response = await fetch(
-                    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${
+                    `https://newsapi.org/v2/top-headlines?country=us&category=${selectedCategory}&apiKey=${
                         import.meta.env.VITE_API_KEY
                     }`
                 );
