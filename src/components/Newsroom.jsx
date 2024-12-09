@@ -22,11 +22,6 @@ const Newsroom = () => {
         fetchNews();
     }, []);
 
-    // Log articles when they are updated
-    useEffect(() => {
-        console.log(articles);
-    }, [articles]);
-
     return <Carousel articles={articles} />;
 };
 

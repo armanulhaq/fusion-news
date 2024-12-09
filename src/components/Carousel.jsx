@@ -17,8 +17,8 @@ export const Carousel = ({ articles }) => {
 
     const handleImageError = (index) => {
         setImageErrors((prev) => ({
-            ...prev,
-            [index]: true,
+            ...prev, //spreading all the previous indexes that were errorec
+            [index]: true, //go to the indexth entry and change its value to true
         }));
     };
 

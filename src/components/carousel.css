@@ -8,6 +8,7 @@
     padding-left: 10vw;
     padding-right: 10vw;
     padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 .slide {
@@ -23,7 +24,7 @@
     width: 100%;
     object-fit: cover; /* Ensures image covers the entire slide area */
     border-radius: 0.5rem; /* Match the slide's border radius */
-    filter: blur(5px);
+    filter: blur(3px);
 }
 
 .slide-hidden {
@@ -74,7 +75,6 @@
     background-color: grey;
 }
 
-/* Optional: Title overlay if you want to add one */
 .slide-title {
     position: absolute;
     bottom: 40px;
@@ -87,4 +87,38 @@
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     text-align: left;
+}
+
+@media screen and (max-width: 767px) {
+    .carousel {
+        height: 35vh;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        padding-top: 20px;
+    }
+    .slide {
+        width: 90%;
+    }
+
+    .arrow {
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+    .arrow-left {
+        left: 1.5rem;
+    }
+
+    .arrow-right {
+        right: 1.5rem;
+    }
+    .indicator {
+        height: 0.3rem;
+        width: 0.3rem;
+    }
+    .slide-title {
+        bottom: 20px;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 400;
+    }
 }
