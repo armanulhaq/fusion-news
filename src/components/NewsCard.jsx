@@ -3,14 +3,14 @@ const NewsCard = ({ title, img, url }) => {
         <a
             href={url}
             target="_blank"
-            className="flex flex-col mt-5 shadow-md rounded-xl cursor-pointer"
+            className="hover:scale-105 flex flex-col mt-5 shadow-md rounded-xl cursor-pointer"
         >
             <img
                 className="rounded-xl h-[200px] w-[400px]"
                 src={img}
                 alt={title}
             />
-            <h2 className="p-4 flex ">{title}</h2>
+            <h2 className="p-4 flex text-gray-500">{title}</h2>
         </a>
     );
 };

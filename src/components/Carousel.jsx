@@ -3,16 +3,16 @@ import { FaChevronCircleRight } from "react-icons/fa";
 import { FaChevronCircleLeft } from "react-icons/fa";
 import "./carousel.css";
 
-export const Carousel = ({ articles }) => {
+export const Carousel = ({ headlines }) => {
     const [slide, setSlide] = useState(0);
     const [imageErrors, setImageErrors] = useState({});
 
     const nextSlide = () => {
-        setSlide(slide === articles.length - 1 ? 0 : slide + 1);
+        setSlide(slide === headlines.length - 1 ? 0 : slide + 1);
     };
 
     const prevSlide = () => {
-        setSlide(slide === 0 ? articles.length - 1 : slide - 1);
+        setSlide(slide === 0 ? headlines.length - 1 : slide - 1);
     };
 
     const handleImageError = (index) => {
@@ -28,7 +28,7 @@ export const Carousel = ({ articles }) => {
                 onClick={prevSlide}
                 className="arrow arrow-left"
             />
-            {articles.map((item, idx) => {
+            {headlines.map((item, idx) => {
                 const imageUrl =
                     !item.urlToImage || imageErrors[idx]
                         ? "/breakingnews.png"
@@ -58,7 +58,7 @@ export const Carousel = ({ articles }) => {
                 className="arrow arrow-right"
             />
             <span className="indicators">
-                {articles.map((_, idx) => {
+                {headlines.map((_, idx) => {
                     return (
                         <button
                             key={idx}

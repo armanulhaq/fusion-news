@@ -24,7 +24,7 @@
     width: 100%;
     object-fit: cover; /* Ensures image covers the entire slide area */
     border-radius: 0.5rem; /* Match the slide's border radius */
-    filter: blur(3px);
+    filter: brightness(30%);
 }
 
 .slide-hidden {

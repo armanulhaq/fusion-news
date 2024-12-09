@@ -8,6 +8,7 @@ import Newsroom from "./components/Newsroom";
 import Feed from "./components/Feed";
 
 function App() {
+    const [headlines, setHeadlines] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("general");
     const [articles, setArticles] = useState([]);
 
@@ -18,6 +19,8 @@ function App() {
                 selectedCategory={selectedCategory}
                 articles={articles}
                 setArticles={setArticles}
+                headlines={headlines}
+                setHeadlines={setHeadlines}
             />
             <Category setSelectedCategory={setSelectedCategory} />
             <Feed articles={articles} />

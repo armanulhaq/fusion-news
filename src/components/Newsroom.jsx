@@ -1,7 +1,30 @@
 import { useEffect } from "react";
 import Carousel from "./Carousel";
 
-const Newsroom = ({ selectedCategory, setArticles, articles }) => {
+const Newsroom = ({
+    selectedCategory,
+    setArticles,
+    headlines,
+    setHeadlines,
+}) => {
+    useEffect(() => {
+        const fetchHeadlines = async () => {
+            try {
+                const response = await fetch(
+                    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${
+                        import.meta.env.VITE_API_KEY
+                    }`
+                );
+                const data = await response.json();
+                setHeadlines(data.articles);
+            } catch (error) {
+                console.error("Failed to fetch news:", error);
+            }
+        };
+        fetchHeadlines();
+        console.log(headlines);
+    }, []);
+
     useEffect(() => {
         const fetchNews = async () => {
             try {
@@ -17,10 +40,13 @@ const Newsroom = ({ selectedCategory, setArticles, articles }) => {
             }
         };
 
-        fetchNews();
-    }, []);
+        // Only fetch if a category is selected
+        if (selectedCategory) {
+            fetchNews();
+        }
+    }, [selectedCategory, setArticles]);
 
-    return <Carousel articles={articles} />;
+    return <Carousel headlines={headlines} />;
 };
 
 export default Newsroom;
