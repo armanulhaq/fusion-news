@@ -1,8 +1,60 @@
-# React + Vite
+# Fusion News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Fusion News is a responsive React-based news aggregator that fetches and displays the latest headlines and stories from the [NewsAPI](https://newsapi.org/). This application is designed to keep users updated on news across various categories with a clean and interactive interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Top Headlines Carousel:** Rotating display of the latest and most significant headlines.
+- **Category Filtering:** Explore news by categories like Politics, Sports, Entertainment, and Business.
+- **Responsive Design:** Optimized for all devices, ensuring a seamless experience on desktops, tablets, and phones.
+- **Dynamic Content:** Fetches live data from NewsAPI and updates in real time.
+- **Error Handling:** Gracefully handles missing images or API issues by using fallbacks.
+
+---
+
+## Screenshots
+
+### **Top Headlines Carousel**
+<img width="1702" alt="image" src="https://github.com/user-attachments/assets/d24febb0-9277-4f26-a5f9-056a92621775">
+
+
+### **Category Filtering**
+<img width="1638" alt="image" src="https://github.com/user-attachments/assets/7ecb8497-a691-4e23-9e00-91ccade38e36">
+
+---
+
+## Getting Started
+
+Follow these instructions to run Fusion News on your local machine.
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- NPM or Yarn
+- A valid [NewsAPI key](https://newsapi.org/register)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/fusion-news.git
+   cd fusion-news
+   ```
+2. Install dependencies:
+  ```
+  npm install
+  ```
+3. Start the development server:
+  ```
+  npm run dev
+  ```
+4. Open your browser and navigate to http://localhost:5173.
+
+##Technologies Used
+React: Frontend framework for building the UI.
+Tailwind CSS: Utility-first CSS framework for styling.
+NewsAPI: External API for fetching news articles.
+
+##Acknowledgments
+    NewsAPI for providing the news content.
+    React Icons for beautiful icons.
