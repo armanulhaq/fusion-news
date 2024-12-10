@@ -21,6 +21,10 @@ Fusion News is a responsive React-based news aggregator that fetches and display
 ### **Category Filtering**
 <img width="1638" alt="image" src="https://github.com/user-attachments/assets/7ecb8497-a691-4e23-9e00-91ccade38e36">
 
+
+##Mobile 
+<img width="401" alt="image" src="https://github.com/user-attachments/assets/06fcbd68-6321-44ea-9d92-08ed88f9c525">
+
 ---
 
 ## Getting Started
@@ -30,22 +34,22 @@ Follow these instructions to run Fusion News on your local machine.
 ### Prerequisites
 
 - Node.js (v16 or higher)
-- NPM or Yarn
+- NPM
 - A valid [NewsAPI key](https://newsapi.org/register)
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/fusion-news.git
+   git clone https://github.com/armanulhaq/fusion-news.git
    cd fusion-news
    ```
 2. Install dependencies:
-  ```
+  ```bash
   npm install
   ```
 3. Start the development server:
-  ```
+  ```bash
   npm run dev
   ```
 4. Open your browser and navigate to http://localhost:5173.
@@ -56,5 +60,5 @@ Tailwind CSS: Utility-first CSS framework for styling.
 NewsAPI: External API for fetching news articles.
 
 ##Acknowledgments
-    NewsAPI for providing the news content.
-    React Icons for beautiful icons.
+ NewsAPI for providing the news content.
+ React Icons for beautiful icons.
