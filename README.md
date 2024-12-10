@@ -24,7 +24,8 @@ Fusion News is a responsive React-based news aggregator that fetches and display
 
 
 ### **Mobile**
-<img width="399" alt="image" src="https://github.com/user-attachments/assets/38aafb94-ed44-4e32-a4f9-44078d513624">
+<img width="399" alt="image" src="https://github.com/user-attachments/assets/7cb7ce37-4717-4c66-92a0-319da483149b">
+
 
 
 ---
