@@ -4,7 +4,7 @@ Fusion News is a responsive React-based news aggregator that fetches and display
 
 ## Features
 
-- **Top Headlines Carousel:** Rotating display of the latest and most significant headlines.
+- **Top Headlines Carousel:** Be updated with the significant headlines.
 - **Category Filtering:** Explore news by categories like Politics, Sports, Entertainment, and Business.
 - **Responsive Design:** Optimized for all devices, ensuring a seamless experience on desktops, tablets, and phones.
 - **Dynamic Content:** Fetches live data from NewsAPI and updates in real time.
