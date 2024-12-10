@@ -69,7 +69,7 @@ export const Carousel = ({ headlines }) => {
                     Top Stories
                 </div>
                 <div className="flex gap-5 flex-col  mt-2">
-                    {headlines.slice(0, 5).map((item, idx) => {
+                    {headlines.slice(-5).map((item, idx) => {
                         const imageUrl = !item.urlToImage
                             ? "/breakingnews.png"
                             : item.urlToImage;

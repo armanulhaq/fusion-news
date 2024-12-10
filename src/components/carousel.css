@@ -6,7 +6,6 @@
     position: relative;
     display: flex;
     align-items: center;
-
     height: 90%;
     padding-top: 20px;
     margin-bottom: 20px;
@@ -37,12 +36,32 @@
     position: absolute;
     width: 1.5rem;
     height: 1.5rem;
-    color: white;
+    color: rgba(255, 255, 255, 0.6); /* Slightly transparent white */
     z-index: 10; /* Ensure arrows are above slides */
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.3
+    ); /* Transparent black background for better visibility */
+    border-radius: 50%; /* Circular arrow container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
+/* Hover effect */
 .arrow:hover {
-    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5); /* Darker background on hover */
+    color: rgba(255, 255, 255, 0.9); /* Less transparent arrow color on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.arrow:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Glow effect */
 }
 
 .arrow-left {
@@ -69,12 +88,11 @@
 
 @media screen and (max-width: 767px) {
     .carousel {
-        width: 100vw;
-        height: 25vh;
+        height: 30vh;
         padding-top: 20px;
     }
     .slide {
-        width: 90%;
+        width: 100%;
     }
 
     .arrow {
@@ -82,11 +100,11 @@
         height: 1.3rem;
     }
     .arrow-left {
-        left: 1.5rem;
+        left: 0.5rem;
     }
 
     .arrow-right {
-        left: 20rem;
+        right: 0.5rem;
     }
     .slide-title {
         bottom: 20px;
