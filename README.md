@@ -15,15 +15,17 @@ Fusion News is a responsive React-based news aggregator that fetches and display
 ## Screenshots
 
 ### **Top Headlines Carousel**
-<img width="1702" alt="image" src="https://github.com/user-attachments/assets/d24febb0-9277-4f26-a5f9-056a92621775">
+<img width="1710" alt="image" src="https://github.com/user-attachments/assets/7e1f96ee-01df-440f-b351-b281ff41d896">
+
 
 
 ### **Category Filtering**
-<img width="1638" alt="image" src="https://github.com/user-attachments/assets/7ecb8497-a691-4e23-9e00-91ccade38e36">
+<img width="1710" alt="image" src="https://github.com/user-attachments/assets/683f3ece-c701-4bd1-94a1-94a7e9da41bf">
 
 
 ### **Mobile**
-<img width="401" alt="image" src="https://github.com/user-attachments/assets/06fcbd68-6321-44ea-9d92-08ed88f9c525">
+<img width="399" alt="image" src="https://github.com/user-attachments/assets/38aafb94-ed44-4e32-a4f9-44078d513624">
+
 
 ---
 
