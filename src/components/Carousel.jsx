@@ -5,7 +5,6 @@ import "./carousel.css";
 
 export const Carousel = ({ headlines }) => {
     const [slide, setSlide] = useState(0);
-    const [imageErrors, setImageErrors] = useState({});
 
     const nextSlide = () => {
         setSlide(slide === headlines.length - 1 ? 0 : slide + 1);
@@ -13,13 +12,6 @@ export const Carousel = ({ headlines }) => {
 
     const prevSlide = () => {
         setSlide(slide === 0 ? headlines.length - 1 : slide - 1);
-    };
-
-    const handleImageError = (index) => {
-        setImageErrors((prev) => ({
-            ...prev, //spreading all the previous indexes that were errorec
-            [index]: true, //go to the indexth entry and change its value to true
-        }));
     };
 
     return (
@@ -35,10 +27,9 @@ export const Carousel = ({ headlines }) => {
                         className="arrow arrow-left"
                     />
                     {headlines.map((item, idx) => {
-                        const imageUrl =
-                            !item.urlToImage || imageErrors[idx]
-                                ? "/breakingnews.png"
-                                : item.urlToImage;
+                        const imageUrl = !item.urlToImage
+                            ? "/breakingnews.png"
+                            : item.urlToImage;
 
                         return (
                             <div
@@ -52,8 +43,11 @@ export const Carousel = ({ headlines }) => {
                                 <img
                                     src={imageUrl}
                                     alt={item.title || `News slide ${idx + 1}`}
-                                    onError={() => handleImageError(idx)}
                                     className="news-image"
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = "/breakingnews.png";
+                                    }}
                                 />
                                 {item.title && (
                                     <div className="slide-title">
@@ -76,10 +70,9 @@ export const Carousel = ({ headlines }) => {
                 </div>
                 <div className="flex gap-5 flex-col  mt-2">
                     {headlines.slice(0, 5).map((item, idx) => {
-                        const imageUrl =
-                            !item.urlToImage || imageErrors[idx]
-                                ? "/breakingnews.png"
-                                : item.urlToImage;
+                        const imageUrl = !item.urlToImage
+                            ? "/breakingnews.png"
+                            : item.urlToImage;
 
                         return (
                             <div
@@ -88,7 +81,10 @@ export const Carousel = ({ headlines }) => {
                             >
                                 <img
                                     src={imageUrl}
-                                    onError={() => handleImageError(idx)}
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = "/breakingnews.png";
+                                    }}
                                     className="h-[70px] w-[100px] rounded-md "
                                 />
                                 {item.title && (

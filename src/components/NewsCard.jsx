@@ -15,6 +15,10 @@ const NewsCard = ({ title, img, url, publishedAt }) => {
                 className="rounded-xl h-[200px] w-[360px] lg:h-[170px] lg:w-[360px] "
                 src={img}
                 alt={title}
+                onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/breakingnews.png";
+                }}
             />
             <div className="flex flex-1 flex-col justify-between">
                 <h2 className="px-4 py-2 flex text-sm  text-gray-300 font-bold">
