@@ -7,11 +7,14 @@ const Newsroom = ({
     headlines,
     setHeadlines,
 }) => {
+    //this is getting data for carousel which only serves general category news
     useEffect(() => {
         const fetchHeadlines = async () => {
             try {
                 const response = await fetch(
-                    "https://newsapi.org/v2/top-headlines?country=us&apiKey=00a7a6936d9542b5b0ad4927e6ca27ac"
+                    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${
+                        import.meta.env.VITE_NEWS_API_KEY
+                    }`
                 );
                 const data = await response.json();
                 setHeadlines(data.articles);
@@ -20,9 +23,9 @@ const Newsroom = ({
             }
         };
         fetchHeadlines();
-        console.log(headlines);
     }, []);
 
+    //fetches data for top stories section with categories
     useEffect(() => {
         const fetchNews = async () => {
             try {

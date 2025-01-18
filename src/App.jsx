@@ -22,7 +22,6 @@ function App() {
             />
             <Category setSelectedCategory={setSelectedCategory} />
             <Feed articles={articles} />
-            {/* <Footer /> */}
         </>
     );
 }
